@@ -1,0 +1,82 @@
+@font-face{
+    font-family: SanFranciscoFont;
+    src: url(../font/SanFranciscoFont.ttf);
+}
+
+h1, p{
+    text-align: center;
+    font-family: 'SanFranciscoFont';
+}
+
+.animation-cont{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-bottom: 3px solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}    
+
+.cloud img{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    animation: cloudAnim 7s linear infinite;
+}
+
+.rock1{
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 100px;
+    background-color: #000;
+    bottom: -5px;
+    animation: floorAnim 2s linear infinite;
+    z-index: 1;
+}
+
+.rock2{
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 100px;
+    background-color: #333;
+    bottom: -4px;
+    animation: floorAnim 5s linear infinite;
+}
+.cactus img{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: -5px;
+    animation: floorAnim 3s linear infinite;
+    z-index: 2;
+}
+.tumbl img{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:50px;
+    height:50px;
+    margin-left: -20px;
+    z-index: 3;
+    animation: tumblAnim 1.3s cubic-bezier(.63,.09,.75,.46) infinite alternate, spinAnim 4s linear infinite;
+}
+
+@keyframes tumblAnim{
+    0%, 10% { bottom: 30%; }
+    100% { bottom: 0%; }
+}
+@keyframes spinAnim{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes cloudAnim{
+    0% { right: -50%; }
+    100% { right: 110%; }
+}
+@keyframes floorAnim{
+    0% { right: -20%; }
+    100% { right: 110%; }
+}
